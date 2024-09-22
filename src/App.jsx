@@ -4,10 +4,22 @@ import Game from '../components/Game'
 import { nanoid } from 'nanoid'
 function App() {
    
-  const [GameOn,setIsGameOn]= useState(false)
+  const [gameOn,setGameOn]= useState(false)
+
+  function startGame()
+  {
+    setGameOn(true)
+  }
   return (
     <>
-      <Main />
+    {!gameOn ? 
+     <Main
+       startGame={startGame} 
+    />
+    :
+    <Game 
+    />
+    }
     </>
   )
 }
