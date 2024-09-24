@@ -1,9 +1,11 @@
-import React from 'react'
 
-function Game() {
+import React from 'react'
+ 
+function Game( ) {
   
   return (
-    <div>game</div>
+    <div> Game</div>
+    
   )
 }
 
