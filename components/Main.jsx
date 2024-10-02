@@ -7,8 +7,9 @@ function Main(props) {
       <div className='main-sub-title'>Let's play a game!</div>
       <button 
       className='main-button'
-      onClick={props.startGame}
-      >Start Quiz
+      onClick={()=> props.setGameOn(true)}
+      >
+      Start Quiz
       </button>
     </main>
   )
