@@ -46,12 +46,17 @@ function Game( ) {
       return array;
     }
      
-  console.log(formattedQuestions)
+  const questionElement= formattedQuestions.map((questionObject)=>
+  <Question
+    key={questionObject.id}
+    question={questionObject.question}
+    choices={questionObject.shuffledAnswers}
+  />)
   return (
     
     <>
     <div className="questions-container">
-      <Question />
+     {questionElement}
     </div>
     </>
     

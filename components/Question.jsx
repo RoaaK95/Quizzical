@@ -1,18 +1,19 @@
+import { nanoid } from 'nanoid'
 import React from 'react'
 
-export default function Question() {
-    const choices=["a","b","c","d"];
-    const choicesElements= choices.map((choice,index) =>
+export default function Question(props) {
+    
+  const choicesElements= props.choices.map((choice) =>
  <button
-   key={index}
+   key={nanoid()}
    className="choice-btn"
  >
-    {choice}
+     {choice} 
  </button>)
   return (
     <div className='question-container'>
       <h1 className='question'>
-           An example of a question?
+         {props.question}
       </h1>
       
       <div className='choices-container'>
