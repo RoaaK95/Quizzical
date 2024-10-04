@@ -2,9 +2,9 @@ import React from 'react'
 
 export default function Question() {
     const choices=["a","b","c","d"];
-    const choicesElements= choices.map((choice) =>
+    const choicesElements= choices.map((choice,index) =>
  <button
-   key={choice.id}
+   key={index}
    className="choice-btn"
  >
     {choice}

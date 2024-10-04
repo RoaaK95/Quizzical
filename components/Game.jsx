@@ -33,6 +33,7 @@ function Game( ) {
 
       ))
     }
+
     function shuffle(array) {
       let currentIndex = array.length;
       while (currentIndex != 0) {
@@ -49,7 +50,7 @@ function Game( ) {
   return (
     
     <>
-    <div class="questions-container">
+    <div className="questions-container">
       <Question />
     </div>
     </>

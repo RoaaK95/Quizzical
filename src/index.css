@@ -6,6 +6,30 @@
   font-family: "karla",sans-serif;
   color: rgb(45, 43, 43);
 }
+html,
+body{
+  height: 100%;
+}
+
+body {
+  background-color: #f5f7fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+.text-center {
+  text-align: center;
+}
 
 /** MAIN **/
 .main-container{
@@ -39,4 +63,43 @@
 .main-button:hover{
   transform: scale(1.1);
   background-color: #6475c7;
+}
+
+/**  GAME **/
+/* questions screen */
+.questions-container {
+  padding: 30px 75px;
+}
+
+/** Question **/
+.question-container {
+  border-bottom: 1px solid #dbdef0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.question {
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #293264;
+  line-height: 19px;
+}
+
+.choices-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 14px;
+}
+
+.choice-btn {
+  border: 1px solid #4d5b9e;
+  border-radius: 8px;
+  background-color: transparent;
+  font-family: "Karla", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #293264;
+  padding: 4px 14px;
 }
