@@ -1,5 +1,6 @@
 import { nanoid } from 'nanoid';
 import { useEffect, useState } from 'react';
+import Question from './Question';
 import React from 'react'
  
 function Game( ) {
@@ -46,7 +47,12 @@ function Game( ) {
      
   console.log(formattedQuestions)
   return (
-    <div> Game</div>
+    
+    <>
+    <div class="questions-container">
+      <Question />
+    </div>
+    </>
     
   )
 }
