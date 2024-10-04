@@ -7,19 +7,20 @@ function Game( ) {
   const [quizData, setQuizData]= useState([])
   const [formattedQuestions,setFormattedQuestions] = useState([])
   useEffect(()=>
-    {
-      fetch("https://opentdb.com/api.php?amount=5&type=multiple")
-      .then((response) => response.json())
-      .then((data) => {
+    { 
+      async function getData(){
+        const res = await  fetch("https://opentdb.com/api.php?amount=5&type=multiple")
+        const data= await res.json()
         setQuizData(data.results);
         formatQuestion(data.results)
-       
-     });
+      } 
+       getData()
     },[])
-   
+    
+
     function formatQuestion(array){
       setFormattedQuestions(
-        array.map((questionObject) => {
+         array.map((questionObject) => {
         return{
           id: nanoid(),
           question: questionObject.question,
