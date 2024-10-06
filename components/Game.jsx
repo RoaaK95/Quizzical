@@ -8,7 +8,7 @@ function Game( ) {
   const [formattedQuestions,setFormattedQuestions] = useState([])
   const [warningMsg,setWarningMsg]=useState(false)
   const [correctAnswers, setCorrectAnswers]= useState(0)
-  const [scoreMsg,setScoreMsg]=useState(false)
+  const [resultMsg,setResultMsg]=useState(false)
   useEffect(()=>
     { 
       async function getData(){
@@ -66,9 +66,10 @@ function Game( ) {
         formattedQuestions.forEach((questionObject) =>{
           if(questionObject.selectedAnswer === questionObject.correctAnswer)
           {
-            setCorrectAnswers((prevNum)=>(prevNum +1 ))
+            setCorrectAnswers((prevNum)=>prevNum +1 )
           }
         })
+        setResultMsg(true)
      }
     }
    
@@ -82,7 +83,8 @@ function Game( ) {
     selectedAnswer={questionObject.selectedAnswer}
     selectAnswer={selectAnswer}
   />)
-  
+   
+   
   return (
     
     <>
@@ -90,25 +92,30 @@ function Game( ) {
      {questionElement}
     </div>
     <div className="text-center">
-      {warningMsg && (<p className='warning-msg'>There are questions not answered yet</p>)}
-      
+      {warningMsg && (
+      <p className='warning-msg'>There are questions not answered yet 
+      </p>
+      )}
+
+      {!resultMsg &&(
       <button
       className='check-btn'
       onClick={allChoicesSelected}
       >
         Check answers
-      </button> 
+      </button>
+      )}
     </div>
 
+    { resultMsg && (
     <div className="result-container">
      <p className='result-msg'>
       You scored {correctAnswers}/5 correct answers
      </p>
-     <button
-      className='play-again-btn'
-      > Play again 
-      </button>
+     <button className='play-again-btn' > Play again </button>
     </div>
+    )}
+
     </>
     
   )
