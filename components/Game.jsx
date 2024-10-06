@@ -10,7 +10,7 @@ function Game( ) {
   const [correctAnswers, setCorrectAnswers]= useState(0)
   const [resultMsg,setResultMsg]=useState(false)
   useEffect(()=>
-    { 
+    { if(quizData.length === 0){
       async function getData(){
         const res = await  fetch("https://opentdb.com/api.php?amount=5&type=multiple")
         const data= await res.json()
@@ -18,7 +18,9 @@ function Game( ) {
         formatQuestion(data.results)
       } 
        getData()
-    },[])
+    }
+      
+    },[quizData])
     
 
     function formatQuestion(array){
@@ -73,7 +75,13 @@ function Game( ) {
      }
     }
    
+   function playAgain(){
     
+    setQuizData([]);
+    setFormattedQuestions([]);
+    setResultMsg(false)
+    setCorrectAnswers(0)
+   }
      
   const questionElement= formattedQuestions.map((questionObject)=>
   <Question
@@ -114,7 +122,11 @@ function Game( ) {
      <p className='result-msg'>
       You scored {correctAnswers}/5 correct answers
      </p>
-     <button className='play-again-btn' > Play again </button>
+     <button 
+     className='play-again-btn'
+     onClick={playAgain} 
+     > Play again 
+     </button>
     </div>
     )}
 
