@@ -71,6 +71,10 @@ function Game( ) {
     <div className="questions-container">
      {questionElement}
     </div>
+    <div>
+      <p>There are questions not answered yet</p>
+      <button>Check answers</button>
+    </div>
     </>
     
   )
