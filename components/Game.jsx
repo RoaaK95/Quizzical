@@ -98,7 +98,16 @@ function Game( ) {
       >
         Check answers
       </button> 
-       
+    </div>
+
+    <div className="result-container">
+     <p className='result-msg'>
+      You scored {correctAnswers}/5 correct answers
+     </p>
+     <button
+      className='play-again-btn'
+      > Play again 
+      </button>
     </div>
     </>
     
