@@ -9,7 +9,11 @@ export default function Question(props) {
   const choicesElements= props.choices.map((choice) =>
  <button
    key={nanoid()}
-   className={`choice-btn ? ${choice === props.selectedAnswer ? "selected": ""} `}
+   className={`choice-btn ? ${choice === props.selectedAnswer ? "selected": ""} 
+   ${props.resultMsg && choice === props.correctAnswer ? "correct":""}
+   ${props.resultMsg && choice === props.selectedAnswer && choice !==props.correctAnswer ? "incorrect":""}
+   ${props.resultMsg && choice !==props.correctAnswer ? "dimmed":""}
+   `}
    onClick={()=> clickChoice(props.question,choice)}
  >
       {decode(choice)} 

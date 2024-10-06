@@ -31,7 +31,7 @@ button:focus {
   text-align: center;
 }
 
-/** MAIN **/
+
 .main-container{
   display: flex;
   flex-direction: column;
@@ -65,13 +65,12 @@ button:focus {
   background-color: #6475c7;
 }
 
-/**  GAME **/
-/* questions screen */
+
 .questions-container {
   padding: 30px 75px;
 }
 
-/** Question **/
+
 .question-container {
   border-bottom: 1px solid #dbdef0;
   padding-top: 16px;
@@ -108,7 +107,19 @@ button:focus {
    background-color: #808fdf;
    border-color:#808fdf;;
 }
+.choice-btn.correct {
+  background-color: #94d7a2;
+  border-color: #94d7a2;
+}
 
+.choice-btn.incorrect {
+  background-color: #f8bcbc;
+  border-color: #f8bcbc;
+}
+
+.choice-btn.dimmed {
+  opacity: 0.5;
+}
 .check-btn,
 .play-again-btn {
   background-color: #4d5b9e;

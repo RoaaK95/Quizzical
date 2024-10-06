@@ -82,6 +82,8 @@ function Game( ) {
     choices={questionObject.shuffledAnswers}
     selectedAnswer={questionObject.selectedAnswer}
     selectAnswer={selectAnswer}
+    correctAnswer={questionObject.correctAnswer}
+    resultMsg={resultMsg}
   />)
    
    
