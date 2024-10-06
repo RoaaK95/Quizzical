@@ -46,13 +46,24 @@ function Game( ) {
       }
       return array;
     }
-     
+
+    function selectAnswer(currentQuestion,answer){
+      setFormattedQuestions(
+        formattedQuestions.map((questionObject)=>{
+        return questionObject.question === currentQuestion ?
+        {...questionObject, selectedAnswer: answer}:
+        questionObject;
+      }))
+    }
+    console.log(formattedQuestions)
   const questionElement= formattedQuestions.map((questionObject)=>
   <Question
     key={questionObject.id}
     question={questionObject.question}
     choices={questionObject.shuffledAnswers}
+    selectAnswer={selectAnswer}
   />)
+  
   return (
     
     <>

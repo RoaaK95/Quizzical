@@ -3,10 +3,14 @@ import React from 'react'
 import { decode } from 'html-entities'
 export default function Question(props) {
     
+  function clickChoice(currentQuestion,answer){
+    props.selectAnswer(currentQuestion,answer)
+  }
   const choicesElements= props.choices.map((choice) =>
  <button
    key={nanoid()}
    className="choice-btn"
+   onClick={()=> clickChoice(props.question,choice)}
  >
       {decode(choice)} 
  </button>)
