@@ -6,6 +6,7 @@ import React from 'react'
 function Game( ) {
   const [quizData, setQuizData]= useState([])
   const [formattedQuestions,setFormattedQuestions] = useState([])
+  const [warningMsg,setWarningMsg]=useState(false)
   useEffect(()=>
     { 
       async function getData(){
@@ -55,7 +56,15 @@ function Game( ) {
         questionObject;
       }))
     }
-    console.log(formattedQuestions)
+
+    function allChoicesSelected() {
+      const notAllSelected = formattedQuestions.some((questionObject) => questionObject.selectedAnswer === "")
+      setWarningMsg(notAllSelected)
+     
+    }
+   
+    
+     
   const questionElement= formattedQuestions.map((questionObject)=>
   <Question
     key={questionObject.id}
@@ -72,12 +81,15 @@ function Game( ) {
      {questionElement}
     </div>
     <div className="text-center">
-      <p className='warning-msg'>There are questions not answered yet</p>
+      {warningMsg && (<p className='warning-msg'>There are questions not answered yet</p>)}
+      
       <button
       className='check-btn'
+      onClick={allChoicesSelected}
       >
         Check answers
-      </button>
+      </button> 
+       
     </div>
     </>
     
