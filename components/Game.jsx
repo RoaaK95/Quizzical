@@ -97,14 +97,14 @@ function Game( ) {
       </p>
       )}
 
-      {!resultMsg &&(
+      {quizData.length >0 && !resultMsg ?(
       <button
       className='check-btn'
       onClick={allChoicesSelected}
       >
         Check answers
       </button>
-      )}
+      ):null}
     </div>
 
     { resultMsg && (
