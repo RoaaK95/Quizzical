@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid'
 import React from 'react'
-
+import { decode } from 'html-entities'
 export default function Question(props) {
     
   const choicesElements= props.choices.map((choice) =>
@@ -8,12 +8,12 @@ export default function Question(props) {
    key={nanoid()}
    className="choice-btn"
  >
-     {choice} 
+      {decode(choice)} 
  </button>)
   return (
     <div className='question-container'>
       <h1 className='question'>
-         {props.question}
+         {decode(props.question)}
       </h1>
       
       <div className='choices-container'>
