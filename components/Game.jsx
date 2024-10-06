@@ -7,6 +7,8 @@ function Game( ) {
   const [quizData, setQuizData]= useState([])
   const [formattedQuestions,setFormattedQuestions] = useState([])
   const [warningMsg,setWarningMsg]=useState(false)
+  const [correctAnswers, setCorrectAnswers]= useState(0)
+  const [scoreMsg,setScoreMsg]=useState(false)
   useEffect(()=>
     { 
       async function getData(){
@@ -60,7 +62,14 @@ function Game( ) {
     function allChoicesSelected() {
       const notAllSelected = formattedQuestions.some((questionObject) => questionObject.selectedAnswer === "")
       setWarningMsg(notAllSelected)
-     
+       if(!notAllSelected){
+        formattedQuestions.forEach((questionObject) =>{
+          if(questionObject.selectedAnswer === questionObject.correctAnswer)
+          {
+            setCorrectAnswers((prevNum)=>(prevNum +1 ))
+          }
+        })
+     }
     }
    
     
