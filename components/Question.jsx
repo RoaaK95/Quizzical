@@ -15,6 +15,7 @@ export default function Question(props) {
    ${props.resultMsg && choice !==props.correctAnswer ? "dimmed":""}
    `}
    onClick={()=> clickChoice(props.question,choice)}
+   disabled={props.resultMsg}
  >
       {decode(choice)} 
  </button>)
