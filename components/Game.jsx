@@ -61,6 +61,7 @@ function Game( ) {
     key={questionObject.id}
     question={questionObject.question}
     choices={questionObject.shuffledAnswers}
+    selectedAnswer={questionObject.selectedAnswer}
     selectAnswer={selectAnswer}
   />)
   

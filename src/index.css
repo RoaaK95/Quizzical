@@ -103,3 +103,8 @@ button:focus {
   color: #293264;
   padding: 4px 14px;
 }
+
+.choice-btn.selected {
+   background-color: #808fdf;
+   border-color:#808fdf;;
+}

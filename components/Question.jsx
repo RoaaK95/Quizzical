@@ -9,7 +9,7 @@ export default function Question(props) {
   const choicesElements= props.choices.map((choice) =>
  <button
    key={nanoid()}
-   className="choice-btn"
+   className={`choice-btn ? ${choice === props.selectedAnswer ? "selected": ""} `}
    onClick={()=> clickChoice(props.question,choice)}
  >
       {decode(choice)} 
