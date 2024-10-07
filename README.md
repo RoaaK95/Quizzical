@@ -11,6 +11,5 @@ The goal is to develop a dynamic and responsive web app for a quiz game using th
 * CSS
 * JavaScript
 * React
-* JSX
-* API
+
 
