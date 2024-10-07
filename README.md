@@ -2,7 +2,8 @@
 
 ## Summary
 
- This project was made for scrimba react course.The goal is to create a dynamic and responsive webApp for a quiz game using openTrivia API and publish it.
+This project was created for the Scrimba React course. 
+The goal is to develop a dynamic and responsive web app for a quiz game using the OpenTrivia API and to publish it.
 
 ## Technologies used
 
